@@ -1,0 +1,516 @@
+/* Import de la funte de google "Nunito" */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Definicion de variables para paleta de colores */
+:root {
+  --color-bordo: #9f3647;
+  --color-fondo: #181419;
+}
+
+/* Reseteo de margenes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* botón para desplazarse hacia arriba */
+  .top {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+  }
+}
+
+/* Estilos para los hipervinclos */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+
+/* Colores y medidas de la barra de desplazamiento */
+::-webkit-scrollbar {
+  background-color: var(--color-fondo);
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-bordo);
+}
+
+/* Animacion para el logo CaC-Movies */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Diseño reponsive para PC de la barra de navegacion */
+.navbar {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1.2em 2.5em 1em;
+  background-color: var(--color-bordo);
+
+  .logo {
+    font-size: 1.2em;
+    font-weight: 800;
+
+    &:hover {
+      animation: shake 0.5s infinite;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 2em;
+
+    li {
+      margin: 1.2em;
+      .link {
+        padding: 0.5em;
+        border-radius: 5px;
+        font-weight: 700;
+      }
+
+      .sign-up {
+        background-color: #000;
+      }
+
+      & .link:hover {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.5s ease;
+      }
+    }
+  }
+}
+
+/* diseño resposive para dispositivos mobile */
+@media (max-width: 768px) {
+  .navbar {
+    margin-bottom: 2px;
+    flex-direction: column;
+    height: auto;
+
+    .links {
+      font-size: 0.9em;
+      margin: 0.1em;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* Diseño reponsive para PC - banner */
+  .hero {
+    background-image: linear-gradient(
+        to right top,
+        rgba(0, 0, 0, 0.54),
+        rgba(0, 0, 0, 0.54)
+      ),
+      url("../assets/img/banner-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    .title {
+      font-size: 4em;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+    .subtitle {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+
+    a {
+      font-size: 1.1em;
+      padding: 1em 2em;
+      background-color: var(--color-bordo);
+      border-radius: 5px;
+      margin: 1em;
+
+      &:hover {
+        box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+        transform: scale(0.95);
+        transition: box-shadow 0.5s ease;
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  /* Diseño reponsive para Mobile - banner */
+  @media (max-width: 768px) {
+    .hero {
+      background-size: cover;
+      background-position: initial;
+      background-repeat: no-repeat;
+      margin-top: 85px;
+      height: 65vh;
+
+      .title {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+      }
+      .subtitle {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 1em;
+      }
+
+      a {
+        font-size: 0.9em;
+        font-weight: 700;
+        padding: 1em 2em;
+        background-color: var(--color-bordo);
+        border-radius: 5px;
+        margin: 1em;
+      }
+    }
+  }
+
+  /* Diseño reponsive para PC - Barra de búsqueda */
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 50vh;
+
+    h2 {
+      font-size: 2em;
+      margin: 1em;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .input-search {
+        margin: 1em;
+        width: 500px;
+        height: 50px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        font-size: 1.5em;
+        padding-left: 1em;
+      }
+
+      .register-button {
+        color: white;
+        border: none;
+        font-weight: 600;
+        height: 50px;
+        font-size: 1em;
+        padding: 0 1.5em;
+        background-color: var(--color-bordo);
+        border-radius: 25px;
+        /* margin: 0em; */
+        border: 2px solid white;
+
+        &:hover {
+          box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+          transform: scale(0.95);
+          transition: box-shadow 0.5s ease;
+          transition: transform 0.5s ease;
+        }
+      }
+    }
+  }
+
+  /* Diseño reponsive para Mobile - Barra de búsqueda */
+  @media (max-width: 768px) {
+    .search {
+      width: 100vw;
+      height: 35vh;
+      justify-content: flex-start;
+      align-items: normal;
+      padding-top: 50px;
+
+      h2 {
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0.5em;
+      }
+
+      form {
+        padding-top: 30px;
+        .input-search {
+          margin: 1em;
+          width: 60%;
+          height: 40px;
+          border-radius: 30px;
+          font-size: 1em;
+          padding-left: 0.5em;
+        }
+
+        .register-button {
+          color: white;
+          border: none;
+          font-weight: 600;
+          height: 40px;
+          font-size: 0.9em;
+          padding: 0 1.5em;
+          background-color: var(--color-bordo);
+          border-radius: 25px;
+          /* margin: 0em; */
+          border: 2px solid white;
+
+          &:hover {
+            box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+            transform: scale(0.95);
+            transition: box-shadow 0.5s ease;
+            transition: transform 0.5s ease;
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+    border: 1px solid var(--color-bordo);
+  }
+
+  /* Diseño reponsive para PC - Seccion tendencias peliculas */
+  .tendencias {
+    h2 {
+      font-size: 2em;
+      margin: 0.5em;
+      text-align: center;
+    }
+
+    .tendencias-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 2em;
+
+      .card {
+        position: relative;
+        margin: 2em;
+
+        &:hover {
+          img {
+            box-shadow: 0 0 30px var(--color-bordo);
+            filter: blur(2px);
+            /* transition: ease 1s; */
+            transform: scale(0.95);
+            transition: all 0.5s ease;
+          }
+          p {
+            font-size: 2rem;
+            opacity: 1;
+            transition: all 0.5s ease;
+          }
+        }
+
+        .movie-title {
+          z-index: 2;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%) translateX(-50%);
+        }
+
+        p {
+          font-size: 1em;
+          font-weight: 600;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+
+        img {
+          border-radius: 10px;
+          width: 200px;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        margin: 2em;
+        width: 100px;
+        height: 50px;
+        font-size: 1em;
+        color: white;
+        font-weight: 600;
+        background-color: var(--color-bordo);
+        border-radius: 5px;
+        border: 1px solid white;
+
+        &:hover {
+          box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+          transform: scale(0.95);
+          transition: box-shadow 0.5s ease;
+          transition: transform 0.5s ease;
+        }
+      }
+    }
+  }
+
+  /* Diseño reponsive para Mobile - Seccion tendencias peliculas */
+  @media (max-width: 768px) {
+    .tendencias {
+      .tendencias-container {
+        .card {
+          img {
+            width: 325px;
+          }
+        }
+      }
+      .pagination {
+        margin-bottom: 2em;
+        button {
+          margin: 1em;
+          font-size: 0.7em;
+          width: 80px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  /* Diseño reponsive para PC - Seccion peliculas mas aclamadas */
+  .aclamadas {
+    max-width: 80%;
+
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem;
+    }
+
+    .mas-aclamadas {
+      margin-bottom: 2em;
+      display: flex;
+      align-items: flex-start;
+      justify-items: flex-start;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      .card-mas-aclamadas {
+        margin: 1rem;
+        display: inline;
+        img {
+          width: 150px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  /* Diseño reponsive para Mobile - Seccion peliclas mas aclamadas */
+  @media (max-width: 768px) {
+    .aclamadas {
+      .mas-aclamadas {
+        .card-mas-aclamadas {
+          img {
+            width: 125px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Diseño reponsive para PC - Footer */
+.footer {
+  background-color: var(--color-bordo);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+
+    li {
+      font-size: 1.2em;
+      list-style: none;
+      margin: 0.6em 1em;
+      font-weight: 800;
+
+      .move-to-top {
+        background-color: var(--color-fondo);
+        padding: 0.5em;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+/* Diseño reponsive para Mobile - Footer */
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    .links {
+      font-size: 0.8em;
+      flex-direction: column;
+    }
+  }
+}
