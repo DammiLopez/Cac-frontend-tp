@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="./styles/animate.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Cac Movies</title>
 </head>
 
@@ -263,7 +264,7 @@
     <script>
 
         //Scroll animation para peliculas
-        ScrollReveal({ reset: true }).reveal('.headline', { delay: 700 });
+        ScrollReveal().reveal('.headline', { delay: 700 });
 
         const isVisible = (element) => {
             let rect = element.getBoundingClientRect();
@@ -292,6 +293,7 @@
                 busqueda.classList.remove('rubberBandAnimation');
             }
         }
+
         // Evento de desplazamiento para verificar si los elementos están visibles
         window.addEventListener('scroll', checkScroll);
 

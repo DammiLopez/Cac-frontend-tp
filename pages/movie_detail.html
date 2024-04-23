@@ -5,15 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/movie-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/animate.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Movie details</title>
 </head>
 
 <body>
+    <header class="header" id="top">
+        <nav class="navbar">
+            <a href="../index.html" class="logo"><i class="fa-solid fa-film"></i> CAC - Movies</a>
+            <ul class="links">
+                <li><a href="#" class="link">Tendencias</a></li>
+                <li><a href="../../pages/sign_up.html" class="link">Registrarse</a></li>
+                <li><a href="../pages/sign_in.html" class="sign-up link">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="hero-details">
+            <div class="hero-container">
+                <div class="details-image">
+                    <img src="../assets/img/mario.jpg" alt="mario-cover">
+                </div>
+                <div class="movie-description">
+                    <h1 class="title">The Super Mario Bros. Movie (2023)</h1>
+                    <p class="subtitle">04/05/2023 • Animation, Family, Adventure, Fantasy, Comedy • 1h 33m</p>
+                    <h3>Overview</h3>
+                    <p>While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are
+                        transported down a mysterious pipe and wander into a magical new world. But when the brothers
+                        are separated, Mario embarks on an epic quest to find Luigi.</p>
+                    <div class="items-detail">
+                        <div>
+                            <h4 class="name">Aaron Horvath</h4>
+                            <p class="charge">Director</p>
+                        </div>
+                        <div>
+                            <h4 class="name">Michael Jelenic
+                            </h4>
+                            <p class="charge">Director</p>
+                        </div>
+                        <div>
+                            <h4 class="name">Matthew Fogel</h4>
+                            <p class="charge">Writer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="trailer">
+            <div class="trailer-container">
+                <div class="video-trailer">
+                    <h3>Ver trailer</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RjNcTBXTk4I?si=PCAoLZlMR_U-0dKD"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="trailer-description">
+                    <div class="trailer-description">
+                        <ul class="medias">
+                            <l1 class="list-item facebook"><a href="#"><i class="fa-brands fa-facebook"></i></a></l1>
+                            <l1 class="list-item twitter"><a href="#"><i class="fa-brands fa-twitter"></i></a></i></l1>
+                            <l1 class="list-item instagram"><a href="#"><i class="fa-brands fa-instagram"></i></a></i>
+                            </l1>
+                            <l1 class="list-item enlace"><a href="#"><i class="fa-solid fa-link"></i></a></i></l1>
+                        </ul>
+                    </div>
+                    <div class="description-container">
+                        <table class="description">
+                            <caption>Info</caption>
+                            <tr>
+                                <th>Status</th>
+                                <td>Released</td>
+                            </tr>
+                            <tr>
+                                <th>Original Language</th>
+                                <td>English</td>
+                            </tr>
+                            <tr>
+                                <th>Budget</th>
+                                <td>$100.000.000,00</td>
+                            </tr>
+                            <tr>
+                                <th>Revenue</th>
+                                <td>$1.347.013.866.00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
 
-    <header></header>
-    <main></main>
-    <footer></footer>
+            </div>
+            </div>
+        </section>
+    </main>
+    <a href="#top">
+        <img class="top" src="../assets/img/flecha-hacia-arriba.png" alt="top">
+    </a>
+    <footer class="footer">
+        <nav class="footer-navbar">
+            <ul class="links">
+                <li><a href="#" class="link">Terminos y condiciones</a></li>
+                <li><a href="#" class="link">Preguntas frecuentes</a></li>
+                <li><a href="#" class="link">Ayuda</a></li>
+                <li><a href="#top" class="move-to-top">Administrador Peliculas</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        ScrollReveal({ reset: true }).reveal('.hero-details', { delay: 500 });
+        ScrollReveal({ reset: true }).reveal('.trailer', { delay: 1000 });
+    </script>
 
 </body>
 
