@@ -485,6 +485,199 @@ a:visited {
       }
     }
   }
+
+  .hero-details {
+    padding-top: 100px;
+    width: 100vw;
+    height: 100vh;
+
+    .hero-container {
+      background-image: linear-gradient(
+          to right top,
+          rgba(107, 107, 107, 0.651),
+          rgba(134, 134, 134, 0.5)
+        ),
+        url("../assets/img/mario-bg.jpg");
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        border-radius: 20px;
+        margin-right: 2em;
+      }
+
+      .movie-description {
+        padding: 1em;
+        width: 55vw;
+
+        h1 {
+          font-size: 2.3em;
+        }
+
+        h3 {
+          margin-top: 1em;
+          font-size: 1.5em;
+        }
+
+        .items-detail {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 2em;
+
+          h4 {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .hero-details {
+      height: 100vh;
+      background-size: cover;
+      display: flex;
+
+      .hero-container {
+        width: 100vw;
+        height: 90vh;
+        flex-direction: column;
+        img {
+          width: 200px;
+        }
+
+        .movie-description {
+          padding: 1em 3em;
+          width: 80vw;
+
+          h1 {
+            font-size: 1.5em;
+          }
+
+          h3 {
+            margin-top: 1em;
+            font-size: 1em;
+          }
+
+          .items-detail {
+            padding-top: 1em;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            h4 {
+              font-size: 1.1em;
+            }
+            div {
+              padding-bottom: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trailer {
+    padding: 0em 0 3em 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .trailer-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 60px;
+
+      .video-trailer {
+        margin: 0 1em 0 1em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h3 {
+          padding-bottom: 10px;
+          font-size: 1.2em;
+        }
+      }
+
+      .trailer-description {
+        width: 100%;
+        margin: auto;
+
+        .medias {
+          width: 100%;
+          display: flex;
+          column-gap: 5em;
+          padding-bottom: 1em;
+          .list-item {
+            font-size: 2.3em;
+          }
+        }
+
+        .description-container {
+          max-width: 100%;
+          /* justify-content: space-between; */
+          th,
+          td {
+            text-align: left;
+            font-size: 1.1em;
+          }
+          td {
+            padding: 10px 0;
+            padding-left: 5em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .trailer {
+      margin-top: 4em;
+      .trailer-container {
+        flex-direction: column;
+
+        .video-trailer {
+          iframe {
+            width: 95vw;
+          }
+        }
+      }
+
+      .trailer-description {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .medias {
+          margin-top: 2em;
+          justify-content: space-between;
+          padding: 0 2em;
+          width: 100%;
+        }
+
+        .description-container {
+          padding: 0 2em;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          td {
+            padding: 10px 0 10px 50vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Diseño reponsive para PC - Footer */
