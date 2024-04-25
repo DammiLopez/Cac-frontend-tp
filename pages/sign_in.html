@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="./styles/animate.min.css">
+    <title>Iniciar Sesión | CAC-MOVIES</title>
+
+</head>
+<body class="bodySign_in" >
+    <header class="headerSign_in" >
+        <nav>
+            <a class="anclaLogo" href="../index.html">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>CAC-Movies</span> 
+            </a>
+        </nav>
+    </header>
+
+    <main class="iniciarSesion"  data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse aos-init aos-animate">
+        <form action >
+        <h2 class="tituloForm">Iniciar Sesión</h2>
+        <div>
+            <input type="email" placeholder="Email" id="email" name="email" required>
+            <div class="error-text"></div>
+        </div>
+        <div>
+            <input type="password" placeholder="Contraseña" id="password" name="password" required>
+            <div class="error-text"></div>
+        </div>
+        <div>
+            <input class="boton" type="submit" value="Iniciar Sesión">
+        </div>
+        <div>
+            <a href="./sign_up.html" class="link">Registrarse</a>
+        </div>
+    </form>
+
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
