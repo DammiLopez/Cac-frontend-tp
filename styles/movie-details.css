@@ -1,0 +1,374 @@
+/* Import de la funte de google "Nunito" */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Definicion de variables para paleta de colores */
+:root {
+  --color-bordo: #9f3647;
+  --color-fondo: #181419;
+}
+
+/* Reseteo de margenes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* botón para desplazarse hacia arriba */
+  .top {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+  }
+}
+
+/* Estilos para los hipervinclos */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+
+/* Colores y medidas de la barra de desplazamiento */
+::-webkit-scrollbar {
+  background-color: var(--color-fondo);
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-bordo);
+}
+
+/* Animaciones */
+
+/* Animacion para el logo CaC-Movies */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animacion para el header */
+.zoomInDownAnimation {
+  animation: zoomInDown 1s;
+}
+
+/* Animacion para la seccion de Busqueda */
+.rubberBandAnimation {
+  animation: rubberBand 1s;
+}
+
+/* Diseño reponsive para PC de la barra de navegacion */
+.header {
+  position: sticky;
+  height: 10vh;
+  top: 0;
+  z-index: 5;
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.7em 2.5em 0.7em;
+    background-color: var(--color-bordo);
+
+    .logo {
+      font-size: 1.2em;
+      font-weight: 800;
+
+      &:hover {
+        animation: shake 0.5s infinite;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 2em;
+
+      li {
+        margin: 1.2em;
+        .link {
+          padding: 0.5em;
+          border-radius: 5px;
+          font-weight: 700;
+        }
+
+        .sign-up {
+          background-color: #000;
+        }
+
+        & .link:hover {
+          background-color: rgba(255, 255, 255, 0);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+          transition: box-shadow 0.5s ease;
+        }
+      }
+    }
+  }
+}
+
+/* diseño resposive para dispositivos mobile para el Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    margin-bottom: 2px;
+    flex-direction: column;
+    height: auto;
+
+    .links {
+      font-size: 0.9em;
+      margin: 0.1em;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.main {
+  .hero-details {
+    height: 100vh;
+
+    .hero-container {
+      background-image: linear-gradient(
+          to right top,
+          rgba(107, 107, 107, 0.651),
+          rgba(134, 134, 134, 0.5)
+        ),
+        url("../assets/img/mario-bg.jpg");
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        border-radius: 20px;
+        margin-right: 2em;
+      }
+
+      .movie-description {
+        padding: 1em;
+        width: 55vw;
+
+        h1 {
+          font-size: 2.3em;
+        }
+
+        h3 {
+          margin-top: 1em;
+          font-size: 1.5em;
+        }
+
+        .items-detail {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 2em;
+
+          h4 {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .hero-details {
+      height: 100vh;
+      background-size: cover;
+      display: flex;
+
+      .hero-container {
+        width: 100vw;
+        height: 90vh;
+        flex-direction: column;
+        img {
+          width: 200px;
+        }
+
+        .movie-description {
+          padding: 1em 3em;
+          width: 80vw;
+
+          h1 {
+            font-size: 1.5em;
+          }
+
+          h3 {
+            margin-top: 1em;
+            font-size: 1em;
+          }
+
+          .items-detail {
+            padding-top: 1em;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            h4 {
+              font-size: 1.1em;
+            }
+            div {
+              padding-bottom: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trailer {
+    padding: 0em 0 3em 4em;
+    .trailer-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .video-trailer {
+        margin: 0 1em 0 1em;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h3 {
+          padding-bottom: 10px;
+          font-size: 1.2em;
+        }
+      }
+
+      .trailer-description {
+        width: 100%;
+        margin: auto;
+
+        .medias {
+          width: 100%;
+          display: flex;
+          column-gap: 5em;
+          padding-bottom: 1em;
+          .list-item {
+            font-size: 2.3em;
+          }
+        }
+
+        .description-container {
+          max-width: 100%;
+          /* justify-content: space-between; */
+          th,
+          td {
+            text-align: left;
+            font-size: 1.1em;
+          }
+          td {
+            padding: 10px 0;
+            padding-left: 5em;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .trailer {
+      .trailer-container {
+        flex-direction: column;
+
+        .video-trailer {
+          iframe {
+            width: 95vw;
+          }
+        }
+      }
+
+      .trailer-description {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .medias {
+          margin-top: 2em;
+          justify-content: space-between;
+          padding: 0 2em;
+          width: 100%;
+        }
+
+        .description-container {
+          padding: 0 2em;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          td {
+            padding: 10px 0 10px 50vw;
+          }
+        }
+      }
+    }
+  }
+}
+/* Diseño reponsive para PC - Footer */
+.footer {
+  background-color: var(--color-bordo);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+
+    li {
+      font-size: 1em;
+      list-style: none;
+      margin: 0.6em 1em;
+      font-weight: 800;
+
+      .move-to-top {
+        background-color: var(--color-fondo);
+        padding: 0.5em;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+/* Diseño reponsive para Mobile - Footer */
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    .links {
+      font-size: 0.8em;
+      flex-direction: column;
+    }
+  }
+}
