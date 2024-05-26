@@ -92,6 +92,18 @@ a:visited {
   padding: 1.2em 2.5em 1em;
   background-color: var(--color-bordo);
 
+  .abrir-menu,
+  .cerrar-menu {
+    color: #1c1c1c;
+    display: none;
+  }
+
+  button .abrir-menu:hover,
+  button .cerrar-menu:hover {
+    color: #1c1c1c;
+    display: none;
+  }
+  
   .logo {
     font-size: 1.2em;
     font-weight: 800;
@@ -130,15 +142,49 @@ a:visited {
 
 /* diseño resposive para dispositivos mobile */
 @media (max-width: 768px) {
+  
+  .header {
+    padding: 0;
+    margin: 0;
+  }
   .navbar {
     margin-bottom: 2px;
-    flex-direction: column;
-    height: auto;
+    height: 50px;
+    flex-wrap: nowrap;
+    .abrir-menu,
+    .cerrar-menu {
+      display: block;
+      border: 0;
+      font-size: 1.25rem;
+      background-color: transparent;
+      cursor: pointer;
+    }
 
-    .links {
-      font-size: 0.9em;
-      margin: 0.1em;
-      flex-wrap: wrap;
+    .nav {
+      visibility: visible;
+      /* opacity: 0; */
+      display: none;
+      flex-direction: column;
+      align-items: end;
+      /* gap: 1rem; */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-bordo);
+      /* padding: 2rem; */
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+
+      .links {
+        background-color: var(--color-bordo);
+        font-size: 0.9em;
+        margin: 0;
+        flex-direction: column;
+        align-items: end;
+      }
+      &.visible {
+        display: flex;
+      }
     }
   }
 }
