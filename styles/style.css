@@ -100,8 +100,7 @@ a:visited {
 
   button .abrir-menu:hover,
   button .cerrar-menu:hover {
-    color: #1c1c1c;
-    display: none;
+    cursor: pointer;
   }
   
   .logo {
