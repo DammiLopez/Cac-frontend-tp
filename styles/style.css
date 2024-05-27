@@ -840,6 +840,13 @@ a {
   font-weight: 400;
 }
 
+.error-text {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
 /* Diseño reponsive para Mobile - page iniciar sesion*/
 @media (max-width: 768px) {
   .iniciarSesion {
