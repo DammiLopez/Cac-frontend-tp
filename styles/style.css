@@ -29,14 +29,7 @@ body {
   }
 }
 
-/* Estilos para los hipervinclos */
-a {
-  text-decoration: none;
-  color: #fff;
-}
-a:visited {
-  color: #fff;
-}
+
 
 /* Colores y medidas de la barra de desplazamiento */
 ::-webkit-scrollbar {
@@ -1038,4 +1031,13 @@ a {
       }
     }
   }
+}
+
+/* Estilos para los hipervinclos */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:visited {
+  color: #fff;
 }
