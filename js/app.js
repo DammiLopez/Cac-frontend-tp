@@ -3,11 +3,12 @@ document.querySelector('.mas-aclamadas').innerHTML = '';
 let page = 1;
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
+// informacion que viajara en la peticion a la API junto con el json web token personal del equipo.
 const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8'
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiOTBlOWVlNDMyNjMzZDkwODJlMTVkYzEzOTdiYzFlNyIsInN1YiI6IjY2NTc5MTk2MjZhYzg5NTc2Zjg4YTU1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cbCH3LlE6K3ELDf581Q558q2QXw7GiXBQjcVrMQd55I'
     }
 };
 
@@ -74,8 +75,8 @@ document.getElementById('next').addEventListener('click', () => {
     getTrendingMovies(page);
 });
 
-getTrendingMovies();
-getTopRatedMovies();
+getTrendingMovies(); //Llamada a la API de themoviedb para obtener las tendencias de peliculas
+getTopRatedMovies(); //Llamada a la API de themoviedb para obtener las peliculas mas mejor votadas
 
 //menu hamburguesa
 
