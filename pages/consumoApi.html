@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/animate.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <title>Cac Movies</title>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo"> <i class="fas fa-film" aria-hidden="true"></i> CAC - Movies</a>
+            <button id="abrir" class="abrir-menu"><i class="fas fa-bars"></i></button>
+            <div class="nav" id="nav">
+                <ul class="links">
+                    <li><a href="./consumoApi.html" class="link">API</a></li>
+                    <li><button class="cerrar-menu" id="cerrar">X</button></li>
+                    <li><a href="#" class="link">Tendencias</a></li>
+                    <li><a href="../pages/sign_up.html" class="link">Registrarse</a></li>
+                    <li><a href="../pages/sign_in.html" class="sign-up link">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+
+        <hr>
+        <section class="tendencias">
+
+            <h2 class="tendencias-title" style="margin-top: 100px;">Las Tendencias de hoy</h2>
+
+            <div class="tendencias-container headline">
+
+            </div>
+            <div class="pagination">
+                <a href="#header">
+                    <button id="prev" type="button">Anterior</button>
+                    <button id="next" type="button">Siguiente</button>
+                </a>
+            </div>
+        </section>
+        <hr>
+        <section class="aclamadas headline">
+            <h3>Las más aclamadas</h3>
+            <div class="mas-aclamadas">
+
+            </div>
+
+        </section>
+    </main>
+    <a href="#header">
+        <img class="top" src="../assets/img/flecha-hacia-arriba.png" alt="top">
+    </a>
+    <footer class="footer">
+        <nav class="footer-navbar">
+            <ul class="links">
+                <li><a href="#" class="link">Terminos y condiciones</a></li>
+                <li><a href="#" class="link">Preguntas frecuentes</a></li>
+                <li><a href="#" class="link">Ayuda</a></li>
+                <li><a href="#header" class="move-to-top">Administrador Peliculas</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+    <script>
+
+        //Scroll animation para peliculas
+        ScrollReveal().reveal('.headline', { delay: 700 });
+
+        const isVisible = (element) => {
+            let rect = element.getBoundingClientRect();
+            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            // Verificar si la parte superior e inferior del elemento están dentro de la ventana
+            return rect.top >= 0 && rect.bottom <= windowHeight;
+        }
+
+        // Función para agregar o eliminar la clase de animación cuando un elemento se hace visible o no
+        const checkScroll = () => {
+            let elements = document.querySelectorAll('.animate');
+            console.log(elements)
+            elements.forEach(function (element) {
+                if (isVisible(element)) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            });
+
+            // Verificar si el elemento "search" está visible
+            let busqueda = document.querySelector('.search');
+            if (isVisible(busqueda)) {
+                busqueda.classList.add('rubberBandAnimation');
+            } else {
+                busqueda.classList.remove('rubberBandAnimation');
+            }
+        }
+
+        // Evento de desplazamiento para verificar si los elementos están visibles
+        window.addEventListener('scroll', checkScroll);
+
+        // Verificar al cargar la página
+        checkScroll();
+    </script>
+    <script src="../js/consumoApi.js"></script>
+
+</body>
+
+</html>
