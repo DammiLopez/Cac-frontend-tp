@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Registro | CAC-MOVIES</title>
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+
+<body class="bodyRegistrarse" background="../assets/img/bg-register.jpg">
+
+    <header class="header" id="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo"> <i class="fas fa-film" aria-hidden="true"></i> CAC - Movies</a>
+            <button id="abrir" class="abrir-menu"><i class="fas fa-bars"></i></button>
+            <div class="nav" id="nav">
+                <ul class="links">
+                    <li><button class="cerrar-menu" id="cerrar">X</button></li>
+                    <li><a href="./consumoApi.html" class="link">API</a></li>
+                    <li><a href="#" class="link">Tendencias</a></li>
+                    <li><a href="./sign_up.html" class="link">Registrarse</a></li>
+                    <li><a href="./sign_in.html" class="sign-up link">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" class="main-registarPelicula">
+        <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarPelicula">
+
+            <!-- Formulario para registrar una nueva Pelicula -->
+            <form id="formRegistrar" action="" method="post">
+                <h2 class="tituloRegistrarse">Agregar Pelicula</h2>
+                <div>
+                    <input type="text" placeholder="Titulo" id="tituloRegistrar" name="titulo">
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <select name="genero" id="generoRegistrar">
+                        <option value="drama">Drama</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="romance">Romance</option>
+                        <option value="terror">Terror</option>
+                        <option value="suspenso">Suspenso</option>
+                        <option value="accion">Acción</option>
+                        <option value="ciencia ficcion">Ciencia ficción</option>
+                        <option value="fantasía">Fantasía</option>
+                        <option value="misterio">Misterio</option>
+                        <option value="documental">Documental</option>
+                        <option value="animacioon">Animación</option>
+                        <option value="suspens0">Suspenso</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="musical">Musical</option>
+                    </select>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input type="number" placeholder="Duracion" id="duracionRegistrar" name="Duracion">
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="file" type="text" placeholder="Url de la imagen..." id="imagenRegistrar"
+                        name="imagen">
+                    <div class="error-text"></div>
+                </div>
+
+                <div id="accionFormulario">
+                    <input class="boton" type="submit" value="Registrar">
+                </div>
+                <!-- / Formulario para registrar una nueva Pelicula -->
+
+
+                <!-- Formulario de edición -->
+            </form>
+            <form id="formEditar" action="" method="put">
+                <h2 class="tituloRegistrarse">Editar pelicula</h2>
+                <div>
+                    <input type="text" placeholder="id" id="id" name="id" hidden>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Titulo" id="titulo" name="titulo">
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <select name="genero" id="genero">
+                        <option value="drama">Drama</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="romance">Romance</option>
+                        <option value="terror">Terror</option>
+                        <option value="suspenso">Suspenso</option>
+                        <option value="accion">Acción</option>
+                        <option value="ciencia ficcion">Ciencia ficción</option>
+                        <option value="fantasía">Fantasía</option>
+                        <option value="misterio">Misterio</option>
+                        <option value="documental">Documental</option>
+                        <option value="animacioon">Animación</option>
+                        <option value="suspens0">Suspenso</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="musical">Musical</option>
+                    </select>
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input type="number" placeholder="Duracion" id="duracion" name="Duracion">
+                    <div class="error-text"></div>
+                </div>
+                <div>
+                    <input class="file" type="text" placeholder="Url de la imagen..." id="imagen" name="imagen">
+                    <div class="error-text"></div>
+                </div>
+
+                <div id="accionFormulario">
+                    <input class="boton edit" type="submit" value="Editar">
+                    <input class="boton botonCancel" type="button" value="Cancelar">
+                </div>
+            </form>
+            <!-- /Formulario de edición -->
+        </section>
+        <section data-aos="zoom-in" data-aos-duration="1000" class="seccionListadoPeliculas">
+            <h2>Listado de Peliculas</h2>
+            <table class="movieTable">
+                <thead>
+                    <tr>
+                        <th>Película</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="movieList">
+
+                </tbody>
+            </table>
+            </table>
+        </section>
+
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../js/gestionPeliculas.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
