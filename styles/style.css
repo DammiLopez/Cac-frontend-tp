@@ -1041,3 +1041,182 @@ a {
 a:visited {
   color: #fff;
 }
+
+/*estilos para el registro de una nueva pelicula*/
+.main-registarPelicula {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+
+  .edit {
+    background-color: green;
+    border-color: green;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 20px;
+  }
+  .boton {
+    width: 30%;
+    padding: 10px;
+    border-radius: 25px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .seccionRegistrarPelicula,
+  .seccionListadoPeliculas {
+    background-color: rgb(42, 42, 42);
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+  }
+
+  #formEditar {
+    display: none;
+  }
+
+  .seccionRegistrarPelicula {
+    input,
+    select {
+      margin-top: 20px;
+      padding: 5px 10px;
+      font-size: 1rem;
+    }
+
+    #botonEditar {
+      display: none;
+    }
+  }
+
+  .seccionListadoPeliculas {
+    .movieTitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .movieGenre {
+      font-size: 1rem;
+    }
+    .movieDuration {
+      font-size: 0.8rem;
+    }
+    .movieTable {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid var(--color-bordo);
+        padding: 8px;
+        text-align: left;
+
+        img {
+          width: 100px;
+        }
+      }
+      .acciones {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+        a {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+        }
+        .edit {
+          width: 80%;
+          padding: 8px;
+          border-radius: 25px;
+          margin-bottom: 5px;
+        }
+        .delete {
+          width: 80%;
+          padding: 8px;
+          border-radius: 25px;
+        }
+      }
+
+      th {
+        background-color: var(--color-bordo);
+        text-align: center;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-registarPelicula {
+    flex-direction: column;
+
+    .seccionRegistrarPelicula {
+      height: 80vh;
+    }
+
+    .seccionRegistrarPelicula,
+    .seccionListadoPeliculas {
+      width: 90%;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+.main-listaUsuarios {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+
+  .seccionListadoUsuarios {
+    background-color: rgb(42, 42, 42);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
+    .usersTable {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: 1px solid var(--color-bordo);
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background-color: var(--color-bordo);
+        text-align: center;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
